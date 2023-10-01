@@ -1,12 +1,17 @@
 class Solution {
-    public int[] shuffle(int[] nums, int n) {
-        int[] buffer = new int[nums.length];
-        for (int i = 0, j = 0; i < nums.length; i += 2) {
-            buffer[i] = nums[j++];
+public:
+    int finalValueAfterOperations(vector<string>& operations) {
+        int X = 0; 
+        
+        for (const string& op : operations) {
+            if (op == "++X" || op == "X++") {
+                X++;  
+            }
+            else {
+                X--;  
+            }
         }
-        for (int i = 1, j = n; i < nums.length; i += 2) {
-            buffer[i] = nums[j++];
-        }
-        return buffer;
+        
+        return X;  
     }
-}
+};
